@@ -20,23 +20,23 @@ def lista_estaciones(request):
     context={
         'est' : est
     }
-    return render(request, "index.html", context)
+    return render(request, "listaEstaciones.html", context)
 
 def detalle_estacion(request, id_estacion):
     det_estacion = get_object_or_404(Estacion, id = id_estacion)
-    pistas = get_list_or_404(Pista)
+    pistas = get_list_or_404(Pista, estacion = id_estacion)
     context ={
         'det_estacion' : det_estacion,
         'pistas' : pistas
     }
-    return render(request, "index.html", context)
+    return render(request, "detalleEstacion.html", context)
 
 def lista_localizaciones(request):
     locs = get_list_or_404(Localizacion)
     context={
         'locs' : locs
     }
-    return render(request, "index.html", context)
+    return render(request, "listaLocalizaciones.html", context)
 
 def detalle_localizacion(request, id_localizacion):
     pistas = []
