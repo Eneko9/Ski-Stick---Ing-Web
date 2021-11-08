@@ -39,11 +39,10 @@ def lista_localizaciones(request):
     return render(request, "listaLocalizaciones.html", context)
 
 def detalle_localizacion(request, id_localizacion):
-    pistas = []
+    localizacion = get_object_or_404(Localizacion, id = id_localizacion)
     estaciones = get_list_or_404(Estacion, localizacion = id_localizacion)
-    for e in estaciones:
-        pistas.append(get_object_or_404(Pista, estacion=e.id))
     context={
-        'pist' : pistas
+        'estaciones' : estaciones,
+        'localizacion' : localizacion
     }
-    return render(request, "index.html", context)
+    return render(request, "detalleLocalizacion.html", context)

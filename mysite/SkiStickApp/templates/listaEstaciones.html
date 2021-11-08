@@ -6,7 +6,9 @@
 <h2>Listado de estaciones</h2>
     <ul>
         {% for estacion in est %}
-            <li>{{ estacion.nombre}} </li>
+            <li>
+                <a href="{% url 'detalles_est' estacion.id %}">{{ estacion.nombre}} </a>
+            </li> 
         {% endfor %}
     </ul>
 {% endblock %}

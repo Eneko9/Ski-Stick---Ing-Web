@@ -6,7 +6,9 @@
 <h2>Listado de localizaciones</h2>
     <ul>
         {% for localizacion in locs %}
-            <li>{{ localizacion.nombre}} </li>
+            <li>
+                <a href="{% url 'detalles_localizacion' localizacion.id %}">{{ localizacion.nombre}} </a>
+            </li>
         {% endfor %}
     </ul>
 {% endblock %}
