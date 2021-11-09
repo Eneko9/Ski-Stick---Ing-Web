@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 urlpatterns = [
     #SkiStickApp/estaciones
+    path('', views.lista_estaciones_por_alquiler, name='estaciones_alq'),
     path('estaciones', views.lista_estaciones, name='estaciones'),
     path('localizaciones', views.lista_localizaciones, name='localizaciones'),
     path('estaciones/<int:id_estacion>', views.detalle_estacion, name='detalles_est'),

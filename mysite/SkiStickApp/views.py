@@ -1,20 +1,21 @@
 from django.shortcuts import render, get_list_or_404, get_object_or_404
 from django.http import HttpResponse
 from .models import Estacion, Localizacion, Pista
-
-# Create your views here
-
-#def lista_estaciones_por_alquiler(request):
-    #ests = []
-    #ests1 = []
-    #locs = get_list_or_404(Localizacion)
-    #for l in locs:
-        #ests1.append(get_object_or_404(Estacion, localizacion = l.id))
-        #for e in ests1:
-            #ests.append(get_object_or_404(Estacion, e.puntos_alquiler = max(ests1.puntos_alquiler)))
         
-
-
+def lista_estaciones_por_alquiler(request):
+    ests = get_list_or_404(Estacion.objects.order_by('-puntos_alquiler'))
+    locs = get_list_or_404(Localizacion)
+    ests_def = []
+    for e in ests:
+        if e.localizacion in locs:
+            ests_def.append(e)
+            locs.remove(e.localizacion)
+    
+    context={
+        'est' : ests_def
+    }
+    return render(request, "listaEstaciones.html", context)
+    
 def lista_estaciones(request):
     est = get_list_or_404(Estacion)
     context={
@@ -23,7 +24,7 @@ def lista_estaciones(request):
     return render(request, "listaEstaciones.html", context)
 
 def detalle_estacion(request, id_estacion):
-    det_estacion = get_object_or_404(Estacion, id = id_estacion)
+    det_estacion = get_object_or_404(Estacion, pk = id_estacion)
     pistas = get_list_or_404(Pista, estacion = id_estacion)
     context ={
         'det_estacion' : det_estacion,
@@ -39,7 +40,7 @@ def lista_localizaciones(request):
     return render(request, "listaLocalizaciones.html", context)
 
 def detalle_localizacion(request, id_localizacion):
-    localizacion = get_object_or_404(Localizacion, id = id_localizacion)
+    localizacion = get_object_or_404(Localizacion, pk = id_localizacion)
     estaciones = get_list_or_404(Estacion, localizacion = id_localizacion)
     context={
         'estaciones' : estaciones,
