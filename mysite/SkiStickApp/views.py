@@ -47,3 +47,11 @@ def detalle_localizacion(request, id_localizacion):
         'localizacion' : localizacion
     }
     return render(request, "detalleLocalizacion.html", context)
+
+def lista_Pistas(request):
+    colors = get_list_or_404(Pista)
+    context={
+        'colors': colors
+    }
+    return render(request, "listaPistas.html", context)
+

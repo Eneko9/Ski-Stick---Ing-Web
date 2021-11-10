@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block titulo %} Listado de los colores de pistas {% endblock %} 
+
+{% block content %}
+<h2>Listado de colores</h2>
+    <ul>
+        {% for pista in colors %}
+            <li>
+               <a href="{% url 'detalles_pista' pista.color_tipo %}">{{pista.color_tipo }}</a>
+            </li> 
+        {% endfor %}
+    </ul>
+{% endblock %}
