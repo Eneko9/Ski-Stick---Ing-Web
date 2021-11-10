@@ -6,7 +6,12 @@
 <h2>Listado de Pistas de {{det_estacion.nombre}}, situada en {{det_estacion.localizacion.nombre}}</h2>
     <ul>
         {% for pista in pistas %}
-            <li>{{ pista.color_tipo}} </li>
+            <li>{{ pista.color_tipo}}</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for strings in lista_strings %}
+            <li>{{ strings}}</li>
         {% endfor %}
     </ul>
 {% endblock %}

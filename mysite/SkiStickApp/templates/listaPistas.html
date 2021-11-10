@@ -5,9 +5,9 @@
 {% block content %}
 <h2>Listado de colores</h2>
     <ul>
-        {% for pista in colors %}
+        {% for pista in colors2 %}
             <li>
-               <a href="{% url 'detalles_pista' pista.color_tipo %}">{{pista.color_tipo }}</a>
+               {{ pista }}
             </li> 
         {% endfor %}
     </ul>
