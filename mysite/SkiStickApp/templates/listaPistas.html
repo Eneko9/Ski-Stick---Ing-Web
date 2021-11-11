@@ -7,7 +7,7 @@
     <ul>
         {% for pista in colors2 %}
             <li>
-               {{ pista }}
+               <a href="{% url 'detalles_pista' pista %}">{{ pista }} </a>
             </li> 
         {% endfor %}
     </ul>

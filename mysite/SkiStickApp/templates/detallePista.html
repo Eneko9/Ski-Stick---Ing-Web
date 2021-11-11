@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block titulo %} Detalles de las pistas {% endblock %} 
+
+{% block content %}
+<h2>Listado de estaciones de color</h2>
+    <ul>
+        {% for pista in pistas %}
+            {% for estacion in ests%}
+                <li>{{ estacion}}</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for strings in lista_strings %}
+            <li>{{ strings}}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
