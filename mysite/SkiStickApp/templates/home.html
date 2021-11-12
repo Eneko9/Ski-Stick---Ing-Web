@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %} 
+
+{% block titulo %} Pagina principal {% endblock %} 
+
+{% block content %}
+<h2>Listado de las estaciones mas destacadas </h2>
+  {% for estacion in est %}
+    <div class="bloque">
+      <a class="linkBloque" href="{% url 'detalles_est' estacion.id %}">{{ estacion.nombre}} </a>
+      <p>{{estacion.localizacion.nombre}}</p>
+    </div>
+{% endfor %}
+{% endblock %}

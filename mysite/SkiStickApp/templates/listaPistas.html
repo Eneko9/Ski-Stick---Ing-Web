@@ -1,9 +1,10 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block titulo %} Listado de los colores de pistas {% endblock %} 
 
 {% block content %}
-<h2>Listado de colores</h2>
+<h2>Tipos de pista existentes</h2>
     <ul>
         {% for pista in colors2 %}
             <li>

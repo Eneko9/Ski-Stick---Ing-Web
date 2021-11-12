@@ -14,7 +14,7 @@ def lista_estaciones_por_alquiler(request):
     context={
         'est' : ests_def
     }
-    return render(request, "index.html", context)
+    return render(request, "home.html", context)
     
 def lista_estaciones(request):
     est = get_list_or_404(Estacion)
