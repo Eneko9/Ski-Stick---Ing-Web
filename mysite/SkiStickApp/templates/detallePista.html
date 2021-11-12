@@ -3,11 +3,11 @@
 {% block titulo %} Detalles de las pistas {% endblock %} 
 
 {% block content %}
-<h2>Listado de estaciones de color</h2>
+<h2>Listado de estaciones de color </h2>
     <ul>
         {% for pista in pistas %}
-            {% for estacion in ests%}
-                <li>{{ estacion}}</li>
+            {# for estacion in ests #}
+                <li>{{ pista.estacion.nombre }}</li>
         {% endfor %}
     </ul>
     <ul>
