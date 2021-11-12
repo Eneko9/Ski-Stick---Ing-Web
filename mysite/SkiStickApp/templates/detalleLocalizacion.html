@@ -4,11 +4,9 @@
 
 {% block content %}
 <h2>Listado de estaciones de {{localizacion.nombre}}</h2>
-    <ul>
         {% for e in estaciones %}
-            <li>
-                <a href="{% url 'detalles_est' e.id %}">{{ e.nombre}} </a>
-            </li>
+            <div class= "bloque">
+                <a class="linkBloque" href="{% url 'detalles_est' e.id %}">{{ e.nombre}} </a>
+            </div>
         {% endfor %}
-    </ul>
 {% endblock %}

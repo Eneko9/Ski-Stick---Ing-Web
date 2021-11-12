@@ -1,14 +1,15 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block titulo %} Listado de estaciones {% endblock %} 
 
 {% block content %}
 <h2>Listado de estaciones</h2>
-    <ul>
-        {% for estacion in est %}
-            <li>
-                <a href="{% url 'detalles_est' estacion.id %}">{{ estacion.nombre}} </a>
-            </li> 
-        {% endfor %}
-    </ul>
+        <ul>
+            {% for estacion in est %}
+                <div class= "bloque"> 
+                    <a class="linkBloque" href="{% url 'detalles_est' estacion.id %}">{{ estacion.nombre}} </a>
+                </div> 
+            {% endfor %}
+        </ul>
 {% endblock %}

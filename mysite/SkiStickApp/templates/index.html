@@ -1,51 +1,10 @@
-<!DOCTYPE HTML>
-<html lang="es">
-
-<head>
-  <title>ski_stick</title>
-  <meta name="description" content="website description" />
-  <meta name="keywords" content="website keywords, website keywords" />
-  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
-  <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
-</head>
-
-<body>
-  <div id="main">
-    <div id="header">
-      <div id="logo">
-        <div id="logo_text">
-          <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="index.html">Ski<span class="logo_colour">Stick</span></a></h1>
-          <h2>Descubre los mejores sitios para practicar ski!</h2>
+{% extends "base.html" %}
+{% load static %}
+    {% block content %}
+      <h2>Listado de estaciones de {{localizacion.nombre}}</h2>
+      {% for e in estaciones %}
+        <div class="bloque">
+          <a class="linkBloque" href="{% url 'detalles_est' e.id %}">{{ e.nombre}} </a>
         </div>
-      </div>
-      <div id="menubar">
-        <ul id="menu">
-          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-          <li class="selected"><a href="index.html">Home</a></li>
-          <li><a href="examples.html">Localizaciones</a></li>
-          <li><a href="page.html">Estaciones</a></li>
-          <li><a href="another_page.html">Tipos de pista</a></li>
-        </ul>
-      </div>
-    </div>
-    <div id="site_content">
-      <div id="content">
-        <!-- insert the page content here -->
-        <h1>Bienvenido a SkiStick</h1>
-        <p>Aqui podras conocer las mejores pistas de esqui del mundo, para principiantes y esquiadores avanzados.</p>
-        <p>{% block subtitle %}Estaciones mas desctacadas:{%block subtitle%}</p>
-        <ul>
-          <li>Internet Explorer 8</li>
-          <li>Internet Explorer 7</li>
-          <li>FireFox 3.5</li>
-          <li>Google Chrome 6</li>
-        </ul>
-      </div>
-    </div>
-    <div id="footer">
-      Copyright &copy; textured_blue | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.html5webtemplates.co.uk">Free CSS Templates</a>
-    </div>
-  </div>
-</body>
-</html>
+      {% endfor %}
+    {% endblock %}

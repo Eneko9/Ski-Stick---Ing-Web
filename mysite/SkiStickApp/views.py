@@ -14,7 +14,7 @@ def lista_estaciones_por_alquiler(request):
     context={
         'est' : ests_def
     }
-    return render(request, "listaEstaciones.html", context)
+    return render(request, "index.html", context)
     
 def lista_estaciones(request):
     est = get_list_or_404(Estacion)
@@ -43,13 +43,9 @@ def detalle_estacion(request, id_estacion):
         if lista_tipos.count(c) != 0:
             elemento_pista = c + " (" + str(lista_tipos.count(c)) + ")"
             lista_strings.append(elemento_pista)
-        #lista_conts.append(lista_tipos.count(c))
-
-
 
     context ={
         'det_estacion' : det_estacion,
-        'pistas' : pistas,
         'lista_strings' : lista_strings
     }
     return render(request, "detalleEstacion.html", context)
@@ -84,33 +80,13 @@ def lista_pistas(request):
 
 
 def detalle_pista(request, color_tipo):
-    #det_estacion = get_object_or_404(Estacion, pk = color_tipo)
     pistas = get_list_or_404(Pista, color_tipo = color_tipo)
 
     lista_tipos = []
     for p in pistas:
         lista_tipos.append(p.color_tipo)
 
-    '''ests = get_list_or_404(Estacion)
-    lista_ests = []
-    for pi in pistas:
-        for e in ests:
-            if pi.estacion not in lista_ests & e.nombre not in lista_ests:
-                lista_ests.append(e.nombre)
-    
-    lista_strings = []
-
-    for c in lista_ests:
-        if lista_tipos.count(c) != 0:
-            elemento_pista = c + " (" + str(lista_tipos.count(c)) + ")"
-            lista_strings.append(elemento_pista)
-        #lista_conts.append(lista_tipos.count(c))'''
-
-
-
     context ={
-        #'det_estacion' : det_estacion,
-        'pistas' : pistas,
-        #'lista_strings' : lista_strings
+        'pistas' : pistas
     }
     return render(request, "detallePista.html", context)
