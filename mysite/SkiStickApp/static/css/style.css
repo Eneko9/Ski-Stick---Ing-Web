@@ -71,16 +71,14 @@ a:hover
   width: 150px;
   height: 30px;
   border: 1px solid #1293EE;
-  padding: 4%;
+  padding: 5%;
   margin: 2%;
 }
 .bloque:hover{
-  background-color: #F0EFE2;
+  border: 1px solid black;
+  color: black;
 }
-.linkBloque{
-  color: #1293EE;
-  text-decoration: none;
-}
+
 blockquote
 { margin: 20px 0; 
   padding: 10px 20px 0 20px;

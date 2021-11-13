@@ -6,9 +6,11 @@
 {% block content %}
 <h2>Listado de estaciones</h2>
     {% for estacion in est %}
-        <div class= "bloque"> 
-            <a class="linkBloque" href="{% url 'detalles_est' estacion.id %}">{{ estacion.nombre}} </a>
-            <p>{{estacion.localizacion.nombre}}</p>
-        </div> 
+        <a href="{% url 'detalles_est' estacion.id %}">
+            <div class= "bloque"> 
+                <p>{{ estacion.nombre}} </p>
+                <img src="{% static ''%}{{estacion.localizacion.nombre}}.png" alt="bandera">
+            </div>
+        </a>
     {% endfor %}
 {% endblock %}
