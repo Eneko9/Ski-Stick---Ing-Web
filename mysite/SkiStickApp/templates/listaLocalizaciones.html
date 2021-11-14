@@ -5,11 +5,13 @@
 
 {% block content %}
 <h2>Listado de localizaciones</h2>
-    <ul>
         {% for localizacion in locs %}
-            <li>
-                <a href="{% url 'detalles_localizacion' localizacion.id %}">{{ localizacion.nombre}} </a>
-            </li>
+        <a href="{% url 'detalles_localizacion' localizacion.id %}">
+            <div class= "bloqueLocs"> 
+                <p>{{ localizacion.nombre}} </p>
+                <img src="{% static ''%}{{localizacion.nombre}}.png" alt="bandera">
+            </div>
+        </a>
         {% endfor %}
-    </ul>
+
 {% endblock %}

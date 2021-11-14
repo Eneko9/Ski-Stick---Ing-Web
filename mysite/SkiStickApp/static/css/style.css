@@ -78,7 +78,22 @@ a:hover
   border: 1px solid black;
   color: black;
 }
-
+.bloqueLocs{
+  text-align: center;
+  background-color: white;  
+  display: inline-block;
+  font-size: medium;
+  width: 650px;
+  height: 20px;
+  border: 1px solid #1293EE;
+  padding-bottom: 7%;
+  padding-top: 1%;
+  margin: 2%;
+}
+.bloqueLocs:hover{
+  border: 1px solid black;
+  color: black;
+}
 blockquote
 { margin: 20px 0; 
   padding: 10px 20px 0 20px;

@@ -7,13 +7,12 @@
 <h2>Listado de estaciones con pistas de este color </h2>
     <ul>
         {% for pista in pistas %}
-            {# for estacion in ests #}
-                <li>{{ pista.estacion.nombre }}</li>
-        {% endfor %}
-    </ul>
-    <ul>
-        {% for strings in lista_strings %}
-            <li>{{ strings}}</li>
+            <a href="{% url 'detalles_est' pista.estacion.id %}">
+                <div class= "bloque"> 
+                    <p>{{ pista.estacion.nombre}} </p>
+                    <img src="{% static ''%}{{pista.estacion.localizacion.nombre}}.png" alt="bandera">
+                </div>
+            </a>
         {% endfor %}
     </ul>
 {% endblock %}

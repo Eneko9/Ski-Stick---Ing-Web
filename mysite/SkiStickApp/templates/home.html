@@ -4,6 +4,9 @@
 {% block titulo %} Pagina principal {% endblock %} 
 
 {% block content %}
+<h2>¡Bienvenidos a SkiStick!</h2>
+<p>Aquí encontraréis un variado listado de estaciones donde practicar todo tipo de deportes de nieve. Para haceros vuestra estancia en la web más sencilla, os indicaremos por cada localización (países) que estaciones hay y por cada estación cuántas pistas hay y de qué tipo (color) son, entre muchas otras cosas.</p>
+<p>Actualmente, te encuentras en la ventana principal donde encontrarás aquellas estaciones de cada localización, que ofrecemos, que tengan más puntos de alquiler.</p>
 <h2>Listado de las estaciones mas destacadas </h2>
   {% for estacion in est %}
     <a href = "{% url 'detalles_est' estacion.id %}">
