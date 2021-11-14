@@ -12,7 +12,7 @@
     <a href = "{% url 'detalles_est' estacion.id %}">
       <div class="bloque">
         <p>{{ estacion.nombre}} </p>
-        <img src="{% static ''%}{{estacion.localizacion.nombre}}.png" alt="bandera">
+        <img src="{% static ''%}{{estacion.localizacion.nombre|cut:" "}}.png" alt="bandera">
       </div>
     </a>
 {% endfor %}

@@ -9,7 +9,7 @@
             <a href="{% url 'detalles_est' e.id %}">
                 <div class= "bloque">
                     <p>{{ e.nombre}} </p>
-                    <img src="{% static ''%}{{e.localizacion.nombre}}.png" alt="bandera">
+                    <img src="{% static ''%}{{e.localizacion.nombre|cut:" "}}.png" alt="bandera">
                 </div>
             </a>
         {% endfor %}

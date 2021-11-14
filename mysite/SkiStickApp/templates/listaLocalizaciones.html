@@ -1,17 +1,16 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block titulo %} Listado de localizaciones {% endblock %} 
+{% block titulo %} Listado de localizaciones {% endblock %}
 
 {% block content %}
 <h2>Listado de localizaciones</h2>
-        {% for localizacion in locs %}
-        <a href="{% url 'detalles_localizacion' localizacion.id %}">
-            <div class= "bloqueLocs"> 
-                <p>{{ localizacion.nombre}} </p>
-                <img src="{% static ''%}{{localizacion.nombre}}.png" alt="bandera">
-            </div>
-        </a>
-        {% endfor %}
-
+{% for localizacion in locs %}
+<a href="{% url 'detalles_localizacion' localizacion.id %}">
+    <div class="bloqueLocs">
+        <p>{{ localizacion.nombre}} </p>
+        <img src="{% static ''%}{{localizacion.nombre|cut:" "}}.png" alt="bandera">
+    </div>
+</a>
+{% endfor %}
 {% endblock %}

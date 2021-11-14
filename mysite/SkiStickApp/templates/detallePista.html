@@ -5,14 +5,13 @@
 
 {% block content %}
 <h2>Listado de estaciones con pistas de este color </h2>
-    <ul>
-        {% for pista in pistas %}
-            <a href="{% url 'detalles_est' pista.estacion.id %}">
-                <div class= "bloque"> 
-                    <p>{{ pista.estacion.nombre}} </p>
-                    <img src="{% static ''%}{{pista.estacion.localizacion.nombre}}.png" alt="bandera">
-                </div>
-            </a>
-        {% endfor %}
-    </ul>
+    {% for pista in pistas %}
+        <a href="{% url 'detalles_est' pista.estacion.id %}">
+            <div class= "bloque"> 
+                <p>{{ pista.estacion.nombre}} </p>
+                <img src="{% static ''%}{{pista.estacion.localizacion.nombre|cut:" "}}.png" alt="bandera">
+            </div>
+        </a>
+    {% endfor %}
+    
 {% endblock %}
