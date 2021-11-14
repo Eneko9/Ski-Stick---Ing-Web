@@ -94,6 +94,9 @@ a:hover
   border: 1px solid black;
   color: black;
 }
+.bloquecolor{
+  text-align: left;
+}
 blockquote
 { margin: 20px 0; 
   padding: 10px 20px 0 20px;

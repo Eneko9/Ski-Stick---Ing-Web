@@ -5,9 +5,12 @@
 
 {% block content %}
 <h2>Listado de Pistas de {{det_estacion.nombre}}, situada en {{det_estacion.localizacion.nombre}}</h2>
+<p>Esta pista tiene {{det_estacion.puntos_alquiler}} donde podrás alquilar/comprar todo tipo de material para practicar deportes de nieve</p>
+<div class = "bloquecolor">   
     <ul>
         {% for strings in lista_strings %}
             <li>{{ strings}}</li>
         {% endfor %}
     </ul>
+</div> 
 {% endblock %}
