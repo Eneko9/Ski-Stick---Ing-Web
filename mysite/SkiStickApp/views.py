@@ -81,9 +81,13 @@ def lista_pistas(request):
 
 def detalle_pista(request, color_tipo):
     pistas = get_list_or_404(Pista, color_tipo = color_tipo)
+    lista_pistas = []
+    for p in pistas:
+        if p not in lista_pistas:
+            lista_pistas.append(p)
 
     context ={
-        'pistas' : pistas
+        'pistas' : lista_pistas
     }
     return render(request, "detallePista.html", context)
 
