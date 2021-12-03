@@ -24,29 +24,11 @@ def lista_estaciones(request):
     return render(request, "listaEstaciones.html", context)
 
 def detalle_estacion(request, id_estacion):
+
     det_estacion = get_object_or_404(Estacion, pk = id_estacion)
-    pistas = get_list_or_404(Pista, estacion = id_estacion)
-
-    lista_tipos = []
-    for p in pistas:
-        lista_tipos.append(p.color_tipo)
-
-    colors = get_list_or_404(Pista)
-    lista_colors = []
-    for c in colors:
-        if c.color_tipo not in lista_colors:
-            lista_colors.append(c.color_tipo)
-    
-    lista_strings = []
-
-    for c in lista_colors:
-        if lista_tipos.count(c) != 0:
-            elemento_pista = c + " (" + str(lista_tipos.count(c)) + ")"
-            lista_strings.append(elemento_pista)
 
     context ={
-        'det_estacion' : det_estacion,
-        'lista_strings' : lista_strings
+        'det_estacion' : det_estacion
     }
     return render(request, "detalleEstacion.html", context)
 
@@ -80,14 +62,11 @@ def lista_pistas(request):
 
 
 def detalle_pista(request, color_tipo):
-    pistas = get_list_or_404(Pista, color_tipo = color_tipo)
-    lista_pistas = []
-    for p in pistas:
-        if p not in lista_pistas:
-            lista_pistas.append(p)
+
+    det_pista = get_object_or_404(Pista, color_tipo = color_tipo)
 
     context ={
-        'pistas' : lista_pistas
+        'det_pista' : det_pista
     }
     return render(request, "detallePista.html", context)
 

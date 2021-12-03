@@ -5,11 +5,11 @@
 
 {% block content %}
 <h2>Listado de estaciones con pistas de este color </h2>
-    {% for pista in pistas %}
-        <a href="{% url 'detalles_est' pista.estacion.id %}">
+    {% for e in det_pista.estacion_set.all %}
+        <a href="{% url 'detalles_est' e.id %}">
             <div class= "bloque"> 
-                <p>{{ pista.estacion.nombre}} </p>
-                <img src="{% static ''%}{{pista.estacion.localizacion.nombre|cut:" "}}.png" alt="bandera">
+                <p>{{ e.nombre}} </p>
+                <img src="{% static ''%}{{e.localizacion.nombre|cut:" "}}.png" alt="bandera">
             </div>
         </a>
     {% endfor %}
