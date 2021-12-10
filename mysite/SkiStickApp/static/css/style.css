@@ -123,47 +123,25 @@ ol li
   margin-right: auto;}
 
 #header
-{ background: #1D1D1D url(header.png) repeat;
+{ background: #43423F url(header.png) repeat;
   height: 15%;}
 
 #modo{
   display: inline-block;
   margin-top: 0.5%;
   margin-left: 2%;
-  width: 60px;
-  height: 30px;
-  background-color: #D9D5CF;
+  padding-top: 1%;
+  width: 50px;
+  height: 40px;
+  border: 1px solid black;
+  text-align: center;
 }
-.switch-button{
-  display: inline-block;
+#modo:hover{
+  background-color: #3B3B3B;
 }
-.switch-button .switch-button-checkbox {
-  display: none;
-}
-.switch-button .switch-button-label {
-  background-color: var(--color-red);
-  width: 5rem;
-  height: 3rem;
-  border-radius: 3rem;
-  display: inline-block;
-  position: relative;
-}
-.switch-button .switch-button-label:before {
-  transition: .2s;
-  display: block;
-  position: absolute;
-  width: 3rem;
-  height: 3rem;
-  background-color: var(--color-button);
-  content: '';
-  border-radius: 50%;
-  box-shadow: inset 0px 0px 0px 1px var(--color-black);
-}
-.switch-button .switch-button-checkbox:checked + .switch-button-label {
-  background-color: var(--color-green);
-}
-.switch-button .switch-button-checkbox:checked + .switch-button-label:before {
-  transform: translateX(2rem);
+#modoN{
+  width: 25px;
+  height: 25px;
 }
 #logo
 { width: 825px;
