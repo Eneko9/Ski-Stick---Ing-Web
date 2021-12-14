@@ -1,8 +1,6 @@
 var modo = new Boolean(true);
 
 function cambiar_modo() {
-  //TODO cambiar los estilos por modo oscuro
-
   if (modo) {
     let header = document.getElementById("header");
     header.style.backgroundColor = "black";

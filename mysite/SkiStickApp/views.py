@@ -74,4 +74,4 @@ def detalle_pista(request, color_tipo):
 
 def opinionForm(request):
     form = MyForm()
-    return render(request, "opiniones.html", {'form': form})
+    return render(request, "opiniones.html", {'form': form})    

@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/jquery.qtip-1.0.0-rc3.min.js' %}"></script>
+<script src="{% static 'js/ajax.js' %}"></script>
 
 {% block titulo %} Listado de localizaciones {% endblock %}
 
 {% block content %}
 <h2>Listado de localizaciones</h2>
 {% for localizacion in locs %}
-<a href="{% url 'detalles_localizacion' localizacion.id %}">
+<a class = "link-localizacion" href="{% url 'detalles_localizacion' localizacion.id %}">
     <div class="bloqueLocs">
         <p>{{ localizacion.nombre}} </p>
         <img src="{% static ''%}{{localizacion.nombre|cut:" "}}.png" alt="bandera">
