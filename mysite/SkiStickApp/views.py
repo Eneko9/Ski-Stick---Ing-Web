@@ -50,6 +50,15 @@ def detalle_localizacion(request, id_localizacion):
     }
     return render(request, "detalleLocalizacion.html", context)
 
+#devuelve la imagen de una localización 
+def detalle_localizacion_ajax(request, id_localizacion):
+    localizacion = get_object_or_404(Localizacion, pk = id_localizacion)
+    estaciones = get_list_or_404(Estacion, localizacion = id_localizacion)
+    context={
+        'estaciones' : estaciones,
+        'localizacion' : localizacion
+    }
+    return render(request, "detalleLocalizacionAjax.html", context)
 def lista_pistas(request):
     colors = get_list_or_404(Pista)
     colors2 = []
