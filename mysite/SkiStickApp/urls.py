@@ -6,7 +6,7 @@ urlpatterns = [
     #SkiStickApp/estaciones
     path('estaciones', views.lista_estaciones, name='estaciones'),
     #SkiStickApp/localizaciones
-    path('localizaciones', views.lista_localizaciones, name='localizaciones'),
+    path('ListaLocalizaciones', views.lista_localizaciones, name='localizaciones'),
     #SkiStickApp/pistas
     path('pistas', views.lista_pistas, name='pistas'),
     #SkiStickApp/estaciones/<id>

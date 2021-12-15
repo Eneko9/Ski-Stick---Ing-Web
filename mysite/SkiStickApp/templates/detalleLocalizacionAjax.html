@@ -1,7 +1,7 @@
 {% if localizacion %}
     {% if localizacion.image %}
         {% load static %}
-        <img alt="hola" class="loc-avatar" src="{{localizacion.image}}" />
+        <img alt="localizacion.nombre" class="loc-avatar" src="{{localizacion.image}}" />
     {% else %}
         <p class="loc-meta">Esta localizacion no tiene imagen.</p>
     {% endif %}

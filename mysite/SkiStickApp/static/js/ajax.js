@@ -1,9 +1,7 @@
 $(document).ready(function() {
-
-  $('a').each(function () {
+  $('a.det-loc').each(function () {
     var href = $(this).attr("href");
     href = href.replace("localizaciones", "localizacionesAjax");
-    alert(href);
     $(this).qtip({
        content: {
           url: href,
