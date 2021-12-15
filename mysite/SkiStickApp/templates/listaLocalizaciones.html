@@ -9,7 +9,7 @@
 {% block content %}
 <h2>Listado de localizaciones</h2>
 {% for localizacion in locs %}
-<a class = "link-localizacion" href="{% url 'detalles_localizacion' localizacion.id %}">
+<a href="{% url 'detalles_localizacion' localizacion.id %}">
     <div class="bloqueLocs">
         <p>{{ localizacion.nombre}} </p>
         <img src="{% static ''%}{{localizacion.nombre|cut:" "}}.png" alt="bandera">
