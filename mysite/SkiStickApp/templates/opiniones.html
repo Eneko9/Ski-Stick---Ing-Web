@@ -7,8 +7,8 @@
 {% block content %}
 <h2>Danos tu opinión sobre tu experiencia</h2>
 <form>
-    {% csrf_token %}d
-    {{form}}
+    {% csrf_token %}
+    {{form.as_p}}
    <input type="submit" value="Submit" />
 </form>
 {% endblock %}
