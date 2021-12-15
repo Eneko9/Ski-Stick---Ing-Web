@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   $('a.link-localizaciones').each(function () {
     var href = $(this).attr("href");
-    href = href.replace("post", "postAjax");
+    href = href.replace("localizaciones", "localizacionesAjax");
     $(this).qtip({
        content: {
           url: href,
