@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 
 
 from SkiStickApp.forms import MyForm, OpinionForm
-from .models import Estacion, Localizacion, Pista
+from .models import Estacion, Localizacion, Pista, Opinion
         
 def lista_estaciones_por_alquiler(request):
     ests = get_list_or_404(Estacion.objects.order_by('-puntos_alquiler'))
@@ -51,13 +51,26 @@ def detalle_localizacion(request, id_localizacion):
     }
     return render(request, "detalleLocalizacion.html", context)
 
-#devuelve la imagen de una localización 
+#devuelve la descripcion de una localización 
 def detalle_localizacion_ajax(request, id_localizacion):
     localizacion = get_object_or_404(Localizacion, pk = id_localizacion)
     estaciones = get_list_or_404(Estacion, localizacion = id_localizacion)
+    
+    #cont1 = 0
+    #cont2 = 0
+    #for e in estaciones:
+        #cont1+=1
+        #opinion = get_list_or_404(Opinion, estacion = e)
+        #for o in opinion:
+            #cont2+=o.valoracion
+        #opinion.clear()
+    
+    #num_med_valoraciones = cont2/cont1
+
     context={
         'estaciones' : estaciones,
-        'localizacion' : localizacion
+        'localizacion' : localizacion,
+        #'media': num_med_valoraciones
     }
     return render(request, "detalleLocalizacionAjax.html", context)
 def lista_pistas(request):

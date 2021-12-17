@@ -10,7 +10,7 @@
 <div class = "bloquecolor">   
     <ul>
         {% for p in det_estacion.pista.all %} <!-- e.Estacion_set-->
-            <li>{{ p.color_tipo }}</li>
+            <li><a href="{% url 'detalles_pista' p %}">{{ p }} </a></li>
         {% endfor %}
     </ul>
 </div> 
