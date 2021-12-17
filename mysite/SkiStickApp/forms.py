@@ -1,10 +1,16 @@
 from django import forms
 
-from SkiStickApp.models import Estacion, Localizacion
+from SkiStickApp.models import Estacion, Opinion
+from django.forms import ModelForm
 
 class MyForm(forms.Form):
-    valoraciones = [('1','Muy Mala'),('2','Mala'),('3','Meh'),('4','Buena'),('5','Muy Buena')]
     nombre = forms.CharField(label='Introduce tu nombre', max_length=100)
     nombre_estacion = forms.ModelChoiceField(queryset=Estacion.objects.all())
-    valoracion = forms.ChoiceField(widget=forms.RadioSelect, choices= valoraciones)
+    valoracion = forms.IntegerField(min_value=1, max_value=5)
     opinion = forms.CharField(widget=forms.Textarea(attrs={"rows":5,"cols":20}))
+
+
+class OpinionForm(ModelForm):
+    class Meta:
+        model = Opinion
+        fields = '__all__'

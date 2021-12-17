@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_list_or_404, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 
-from SkiStickApp.forms import MyForm
+
+from SkiStickApp.forms import MyForm, OpinionForm
 from .models import Estacion, Localizacion, Pista
         
 def lista_estaciones_por_alquiler(request):
@@ -82,5 +83,11 @@ def detalle_pista(request, color_tipo):
     return render(request, "detallePista.html", context)
 
 def opinionForm(request):
-    form = MyForm()
+    if request.method == 'POST':
+        form = OpinionForm(request.POST)
+        if(form.is_valid()):
+            form.save()
+            
+    else:
+        form = OpinionForm()
     return render(request, "opiniones.html", {'form': form})    
