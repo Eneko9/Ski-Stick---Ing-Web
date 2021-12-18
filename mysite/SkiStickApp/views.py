@@ -55,24 +55,13 @@ def detalle_localizacion(request, id_localizacion):
 def detalle_localizacion_ajax(request, id_localizacion):
     localizacion = get_object_or_404(Localizacion, pk = id_localizacion)
     estaciones = get_list_or_404(Estacion, localizacion = id_localizacion)
-    
-    #cont1 = 0
-    #cont2 = 0
-    #for e in estaciones:
-        #cont1+=1
-        #opinion = get_list_or_404(Opinion, estacion = e)
-        #for o in opinion:
-            #cont2+=o.valoracion
-        #opinion.clear()
-    
-    #num_med_valoraciones = cont2/cont1
 
     context={
         'estaciones' : estaciones,
         'localizacion' : localizacion,
-        #'media': num_med_valoraciones
     }
     return render(request, "detalleLocalizacionAjax.html", context)
+
 def lista_pistas(request):
     colors = get_list_or_404(Pista)
     colors2 = []
@@ -96,6 +85,9 @@ def detalle_pista(request, color_tipo):
     return render(request, "detallePista.html", context)
 
 def opinionForm(request):
+    opiniones = get_list_or_404(Opinion)
+
+
     if request.method == 'POST':
         form = OpinionForm(request.POST)
         if(form.is_valid()):
@@ -103,4 +95,6 @@ def opinionForm(request):
             
     else:
         form = OpinionForm()
-    return render(request, "opiniones.html", {'form': form})    
+    
+    
+    return render(request, "opiniones.html", {'form': form, 'opiniones' : opiniones})    

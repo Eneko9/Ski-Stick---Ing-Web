@@ -90,6 +90,34 @@ a:hover
   padding-top: 1%;
   margin: 2%;
 }
+#bloqueOp{
+  width: 750px;
+  display: inline-block;
+  background-color: white; 
+  border: 1px solid #1293EE;
+  margin-bottom: 1%;
+}
+#headOp p{
+  display: inline-block;
+  padding:1%;
+}
+#nomOp{
+  color: black;
+}
+
+#valOp{
+  color: grey
+}
+
+#estOp{
+  color: grey;
+}
+
+#op{
+  text-align: left;
+  padding-left:1%;
+  color: black;
+}
 .bloqueLocs:hover{
   border: 1px solid black;
   color: black;
@@ -322,3 +350,4 @@ table tr td
 { background: #F0EFE2;
   color: #47433F;
   border-top: 1px solid #FFF;}
+
