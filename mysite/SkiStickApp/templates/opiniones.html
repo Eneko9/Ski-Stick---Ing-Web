@@ -8,12 +8,11 @@
 <h2>Danos tu opinión sobre tu experiencia</h2>
 <form method = "POST">
     {% csrf_token %}
-    
     {{form.as_p}}
-   <input type="submit" value="Submit" />
+   <input type="submit" value="Submit"/>
 </form>
 
-<h2>Listado de opiniones</h2>
+<h2>Opiniones de otros usuarios</h2>
 {% for op in opiniones %}
 <div id = "bloqueOp">
     <div id = "headOp">

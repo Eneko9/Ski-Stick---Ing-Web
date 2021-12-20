@@ -92,7 +92,6 @@ def opinionForm(request):
         form = OpinionForm(request.POST)
         if(form.is_valid()):
             form.save()
-            
     else:
         form = OpinionForm()
     
