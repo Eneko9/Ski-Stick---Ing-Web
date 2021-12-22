@@ -90,30 +90,30 @@ a:hover
   padding-top: 1%;
   margin: 2%;
 }
-#bloqueOp{
+.bloqueOp{
   width: 750px;
   display: inline-block;
   background-color: white; 
   border: 1px solid #1293EE;
   margin-bottom: 1%;
 }
-#headOp p{
+.headOp p{
   display: inline-block;
   padding:1%;
 }
-#nomOp{
+.nomOp{
   color: black;
 }
 
-#valOp{
+.valOp{
   color: grey
 }
 
-#estOp{
+.estOp{
   color: grey;
 }
 
-#op{
+.op{
   text-align: left;
   padding-left:1%;
   color: black;

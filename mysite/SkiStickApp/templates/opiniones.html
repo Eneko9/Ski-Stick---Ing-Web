@@ -14,13 +14,13 @@
 
 <h2>Opiniones de otros usuarios</h2>
 {% for op in opiniones %}
-<div id = "bloqueOp">
-    <div id = "headOp">
-        <p id = "nomOp">{{ op.nombre_usu}} </p>
-        <p id = "valOp">Valoración: {{ op.valoracion}}/5 </p>
-        <p id = "estOp">Estación: <a href="{% url 'detalles_est' op.estacion.id %}">{{ op.estacion.nombre}} </a></p>
+<div class = "bloqueOp">
+    <div class = "headOp">
+        <p class = "nomOp">{{ op.nombre_usu}} </p>
+        <p class = "valOp">Valoración: {{ op.valoracion}}/5 </p>
+        <p class = "estOp">Estación: <a href="{% url 'detalles_est' op.estacion.id %}">{{ op.estacion.nombre}} </a></p>
     </div>
-    <p id = "op">{{ op.opinion}} </p>
+    <p class = "op">{{ op.opinion}} </p>
 </div>
 {% endfor %}
 {% endblock %}
